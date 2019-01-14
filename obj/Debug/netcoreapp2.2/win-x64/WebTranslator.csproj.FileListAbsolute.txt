@@ -1,0 +1,14 @@
+E:\WebTranslator\bin\Debug\netcoreapp2.2\win-x64\hostpolicy.dll
+E:\WebTranslator\bin\Debug\netcoreapp2.2\win-x64\hostfxr.dll
+E:\WebTranslator\bin\Debug\netcoreapp2.2\win-x64\WebTranslator.exe
+E:\WebTranslator\bin\Debug\netcoreapp2.2\win-x64\WebTranslator.deps.json
+E:\WebTranslator\bin\Debug\netcoreapp2.2\win-x64\WebTranslator.runtimeconfig.json
+E:\WebTranslator\bin\Debug\netcoreapp2.2\win-x64\WebTranslator.runtimeconfig.dev.json
+E:\WebTranslator\bin\Debug\netcoreapp2.2\win-x64\WebTranslator.dll
+E:\WebTranslator\bin\Debug\netcoreapp2.2\win-x64\WebTranslator.pdb
+E:\WebTranslator\obj\Debug\netcoreapp2.2\win-x64\WebTranslator.csprojAssemblyReference.cache
+E:\WebTranslator\obj\Debug\netcoreapp2.2\win-x64\WebTranslator.csproj.CoreCompileInputs.cache
+E:\WebTranslator\obj\Debug\netcoreapp2.2\win-x64\WebTranslator.AssemblyInfoInputs.cache
+E:\WebTranslator\obj\Debug\netcoreapp2.2\win-x64\WebTranslator.AssemblyInfo.cs
+E:\WebTranslator\obj\Debug\netcoreapp2.2\win-x64\WebTranslator.dll
+E:\WebTranslator\obj\Debug\netcoreapp2.2\win-x64\WebTranslator.pdb
