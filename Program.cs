@@ -10,16 +10,18 @@ using System.Collections.Generic;
 using System.Threading;
 using System.Globalization;
 
-namespace WebTranslator
+namespace Translator
 {
+    //define response construct
     [DataContract]
     class Response
     {
         [DataMember]
-        public int statusCode { get; set; }
+        public int      statusCode { get; set; }
         [DataMember]
-        public string translationResponse { get; set; }
+        public string   translationResponse { get; set; }
     }
+
     class Program
     {
         static void Main(string[] args)
@@ -36,29 +38,30 @@ namespace WebTranslator
 
         static string RequestUrl(string sourceTxt)
         {
-            string requestUrl = "https://cn.bing.com/ttranslate";
-            WebRequest request = WebRequest.Create(requestUrl);
+            //tranlation website
+            string requestUrl   = "https://cn.bing.com/ttranslate";
+            WebRequest request  = WebRequest.Create(requestUrl);
 
-            var postData = string.Format("text={0}&", sourceTxt);
-            postData += "from=en&"; //from english
-            postData += "to=de";    //to german
+            var postData    = string.Format("text={0}&", sourceTxt);
+            postData        += "from=en&"; //from english
+            postData        += "to=de";    //to german
 
             var data = Encoding.UTF8.GetBytes(postData);
 
-            request.Method = "POST";
-            request.ContentType = "application/x-www-form-urlencoded";
-            request.ContentLength = data.Length;
-            using (var stream = request.GetRequestStream())
+            request.Method          = "POST";
+            request.ContentType     = "application/x-www-form-urlencoded";
+            request.ContentLength   = data.Length;
+            using (var stream       = request.GetRequestStream())
             {
                 stream.Write(data, 0, data.Length);
             }
 
-            var response = (HttpWebResponse)request.GetResponse();
-            var responseString = new StreamReader(response.GetResponseStream()).ReadToEnd();
+            var response        = (HttpWebResponse)request.GetResponse();
+            var responseString  = new StreamReader(response.GetResponseStream()).ReadToEnd();
 
-            var ms = new MemoryStream(Encoding.UTF8.GetBytes(responseString));
+            var ms                          = new MemoryStream(Encoding.UTF8.GetBytes(responseString));
             DataContractJsonSerializer dcjs = new DataContractJsonSerializer(typeof(Response));
-            Response rs = (Response)dcjs.ReadObject(ms);
+            Response rs                     = (Response)dcjs.ReadObject(ms);
             return rs.translationResponse;
         }
     }
